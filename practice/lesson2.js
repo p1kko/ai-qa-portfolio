@@ -1,19 +1,18 @@
 const results = [
-  { name: 'login', status: 'passed', duration: 1200 },
-  { name: 'logout', status: 'passed', duration: 800 },
-  { name: 'add todo', status: 'failed', duration: 3000 },
-  { name: 'delete todo', status: 'passed', duration: 950 },
-  { name: 'edit todo', status: 'failed', duration: 4100 },
+  { name: "login", status: "passed", duration: 1200 },
+  { name: "logout", status: "passed", duration: 800 },
+  { name: "add todo", status: "failed", duration: 3000 },
+  { name: "delete todo", status: "passed", duration: 950 },
+  { name: "edit todo", status: "failed", duration: 4100 },
 ];
 
 // function isFailed(result){                           //Напиши функцию isFailed(result), которая возвращает true, если тест упал, и false, если прошёл. Используй её в цикле for...of, чтобы вывести названия упавших тестов.
 //   return result.status === 'failed'
 // }
 
-
 // for(const result of results){
 //     if (isFailed(result)){
-//         console.log(result.name) 
+//         console.log(result.name)
 //     }
 // }
 
@@ -25,26 +24,24 @@ const results = [
 //     console.log(formatResult(result))
 // }
 
-
 // 3.Напиши функцию countByStatus(results, status), которая возвращает, сколько тестов имеют указанный статус. Вызови её два раза и выведи Passed: 3, Failed: 2.
 // Подсказка: внутри — счётчик и цикл, как в уроке 1, только в конце return.
 
 // function countByStatus(results, status) {
-//   let count = 0;                       
+//   let count = 0;
 
-//   for (const result of results) {      
-//     if (result.status === status) {   
-//       count++;                         
+//   for (const result of results) {
+//     if (result.status === status) {
+//       count++;
 //     }
 //   }
 
-//   return count;                     
+//   return count;
 // }
 
-// const passed = countByStatus(results, 'passed');   
+// const passed = countByStatus(results, 'passed');
 // const failed = countByStatus(results, 'failed');
-// console.log(`Passed: ${passed}, Failed: ${failed}`);   
-
+// console.log(`Passed: ${passed}, Failed: ${failed}`);
 
 //4.Перепиши isFailed из задания 1 как стрелочную функцию в одну строку.
 
@@ -56,7 +53,7 @@ const results = [
 
 // for(const result of results){
 //     if (isFailed(result)){
-//         console.log(result.name) 
+//         console.log(result.name)
 //     }
 // }
 
@@ -69,3 +66,24 @@ const results = [
 
 // const slow = getSlowNames(results)
 // console.log(slow)
+
+// разминка
+
+// function countSlow(results, limit) {
+//   let count = 0;
+//   for (const result of results) {
+//     if (result.duration > limit) {
+//       count++;
+//     }
+//   }
+//   return count;
+// }
+
+// console.log(countSlow(results, 1000));  // 3
+// console.log(countSlow(results, 3500));  // 1
+
+// const countSlowShort = (results, limit) =>
+//   results.filter((r) => r.duration > limit).length;
+
+// console.log(countSlowShort(results, 1000)); // 3
+// console.log(countSlowShort(results, 3500)); // 1
